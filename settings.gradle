@@ -11,4 +11,6 @@ plugins {
 }
 
 rootProject.name = 'hellocava'
+
 include('java-logging')
+include('java-web')

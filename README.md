@@ -1,6 +1,6 @@
 # hellocava
 
-Java'yla ilgili kavramları keşfeden çok basit projeler.
+Java ile ilgili kavramları keşfeden "çok basit" projeler.
 
 ```sh
 $ ./gradlew :java-logging:run
