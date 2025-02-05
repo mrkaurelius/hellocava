@@ -1,0 +1,50 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.0'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'dev.kumru'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+}
+
+
+compileJava {
+	options.compilerArgs += ['-Xlint:unchecked']
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+
+	implementation 'org.bitcoinj:bitcoinj-core:0.16.3'
+	implementation 'com.github.briandilley.jsonrpc4j:jsonrpc4j:1.6'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.2'
+
+	implementation 'org.apache.logging.log4j:log4j-core:2.24.3'
+	implementation 'org.apache.logging.log4j:log4j-api:2.24.3'
+	testImplementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.24.3'
+
+	compileOnly 'org.projectlombok:lombok:1.18.36'
+	annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.36'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
