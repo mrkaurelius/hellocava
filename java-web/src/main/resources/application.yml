@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: java-web
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, metrics
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    dev.kumru: INFO
